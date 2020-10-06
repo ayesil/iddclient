@@ -41,7 +41,7 @@ class Iddclient
      * @param $appSecret
      * @param $token
      */
-    function __construct($appKey, $appSecret, $token)
+    function __construct($appKey = '', $appSecret = '', $token = '')
     {
         $this->appKey = $appKey;
         $this->appSecret = $appSecret;
@@ -79,7 +79,7 @@ class Iddclient
      * @param $hash
      * @return false|string
      */
-    private function getUserConnectDataByUserHash($hash)
+    public function getUserConnectDataByUserHash($hash)
     {
         $url = "https://idd.ddev.site/?type=3772&hash=".$hash;
 
