@@ -31,7 +31,27 @@ namespace ayesil\Iddclient;
  */
 class Iddclient
 {
-    function __construct()
+    protected $appKey;
+    protected $appSecret;
+    protected $token;
+
+    /**
+     * Iddclient constructor.
+     * @param $appKey
+     * @param $appSecret
+     * @param $token
+     */
+    function __construct($appKey, $appSecret, $token)
     {
+        $this->appKey = $appKey;
+        $this->appSecret = $appSecret;
+        $this->token = $token;
+    }
+
+    public function start()
+    {
+        var_dump($this->appKey);
+        var_dump($this->appSecret);
+        var_dump($this->token);
     }
 }
