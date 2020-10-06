@@ -48,10 +48,47 @@ class Iddclient
         $this->token = $token;
     }
 
+    /**
+     *
+     */
     public function start()
     {
         var_dump($this->appKey);
         var_dump($this->appSecret);
         var_dump($this->token);
+    }
+
+    /**
+     * @param $hash
+     * @return false|string
+     */
+    public function getUserDataByUserHash($hash)
+    {
+        $url = "https://idd.ddev.site/?type=3771&hash=".$hash;
+
+        $rawResponse = @file_get_contents($url);
+
+        if ($rawResponse === false || $rawResponse === null) {
+            return false;
+        }
+
+        return $rawResponse;
+    }
+
+    /**
+     * @param $hash
+     * @return false|string
+     */
+    private function getUserConnectDataByUserHash($hash)
+    {
+        $url = "https://idd.ddev.site/?type=3772&hash=".$hash;
+
+        $rawResponse = @file_get_contents($url);
+
+        if ($rawResponse === false || $rawResponse === null) {
+            return false;
+        }
+
+        return $rawResponse;
     }
 }
