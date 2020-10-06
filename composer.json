@@ -1,0 +1,14 @@
+{
+    "name": "yesil/iddclient",
+    "description": "",
+    "homepage": "https://yesil.def",
+    "license": ["GPL-3.0-or-later"],
+    "keywords": ["iddclient"],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "ayesil\\Iddclient\\": "/"
+        }
+    }
+}
